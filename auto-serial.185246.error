@@ -1,0 +1,26 @@
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: execve(): /global/u1/p/phoenix4/cs267hw2/cs267-hw2-particle-simulation/./serial: No such file or directory
+srun: error: nid00287: task 0: Exited with exit code 2
+srun: Terminating job step 185246.0
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: execve(): /global/u1/p/phoenix4/cs267hw2/cs267-hw2-particle-simulation/./serial: No such file or directory
+srun: error: nid00287: task 0: Exited with exit code 2
+srun: Terminating job step 185246.1
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: execve(): /global/u1/p/phoenix4/cs267hw2/cs267-hw2-particle-simulation/./serial: No such file or directory
+srun: error: nid00287: task 0: Exited with exit code 2
+srun: Terminating job step 185246.2
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: execve(): /global/u1/p/phoenix4/cs267hw2/cs267-hw2-particle-simulation/./serial: No such file or directory
+srun: error: nid00287: task 0: Exited with exit code 2
+srun: Terminating job step 185246.3
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: execve(): /global/u1/p/phoenix4/cs267hw2/cs267-hw2-particle-simulation/./serial: No such file or directory
+srun: error: nid00287: task 0: Exited with exit code 2
+srun: Terminating job step 185246.4
+/var/spool/slurmd/job185246/slurm_script: line 15: ./autograder: No such file or directory

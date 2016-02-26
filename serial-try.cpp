@@ -4,6 +4,8 @@
 #include <math.h>
 #include <vector>
 #include "world.h"
+#include <iostream>
+
 
 #define MARGIN      0
 
@@ -25,6 +27,8 @@ int main( int argc, char **argv )
 {    
     int navg,nabsavg=0;
     double davg,dmin, absmin=1.0, absavg=0.0;
+    
+    //cout << "meow0" << endl;
 
     if( find_option( argc, argv, "-h" ) >= 0 )
     {
@@ -58,8 +62,12 @@ int main( int argc, char **argv )
     //Generate a nuw world with ...
     world_t newWorld(newGrid, n, bin_number);
     init_particles( n, newWorld.particles.data() );
-    
-
+   /* 
+    for(int i = 0; i < newWorld.particles.size(); i++)
+    {
+        cout << newWorld.particles[i].x << endl;
+    }*/
+    // cout << "meow1" << endl;
     //
     //  simulate a number of time steps
     //
@@ -73,12 +81,16 @@ int main( int argc, char **argv )
         
 
         //
+        //cout << step << endl;
+        //cout << "meow0" << endl;
         newWorld.resetDivision();
 
         //
+        //cout << "meow1" << endl;
         newWorld.computeAllParticleForces(&dmin, &davg, &navg);
 
         //
+        //cout << "meow2" << endl;
         newWorld.moveParticles();
 
         if( find_option( argc, argv, "-no" ) == -1 )

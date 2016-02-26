@@ -4,11 +4,15 @@
 
 using namespace std;
 
+#define RECOLATE_BATCH_SIZE	100
+#define FORCE_BATCH_SIZE	100
+#define MOVE_BATCH_SIZE		100
+
 
 direction Directions[] = { {-1,-1}, {-1,0}, {-1,1}, {0,-1}, {0,0}, {0,1}, {1,-1}, {1,0}, {1,1} };
 
 
-world_t::world_t(grid_t outGrid, int numParticles, int numBins)
+world_omp_t::world_omp_t(grid_t outGrid, int numParticles, int numBins)
 {
 	grid = outGrid;
 	particles.resize(numParticles);
@@ -16,7 +20,7 @@ world_t::world_t(grid_t outGrid, int numParticles, int numBins)
 }
 
 
-void world_t::resetDivision()
+void world_omp_t::resetDivision()
 {
 	relocateAllParticles();
 
@@ -38,16 +42,16 @@ void world_t::resetDivision()
 	}
 }
 
-void world_t::relocateAllParticles()
+void world_omp_t::relocateAllParticles()
 {
-	//Parallalizable
+	#pragma omp parallel for schedule(static, RELOCATE_BATCH_SIZE)
 	for(int i = 0; i < particles.size(); i++)
 	{
 		particles[i].binNumber = relocateOneParticle(particles[i]);
 	}
 }
 
-int world_t::relocateOneParticle(particle_t &particle)
+int world_omp_t::relocateOneParticle(particle_t &particle)
 {
 	int bin_x = particle.x / grid.getBinSize();
 	int bin_y = particle.y / grid.getBinSize();
@@ -55,15 +59,13 @@ int world_t::relocateOneParticle(particle_t &particle)
 	return ans;
 }
 
-void world_t::computeAllParticleForces(double *dmin, double *davg, int *navg)
+void world_omp_t::computeAllParticleForces(double *dmin, double *davg, int *navg)
 {
-	for (int i = 0; i < particles.size(); i++)
-	{
-		computeOneParticleForces(particles[i], dmin, davg, navg);
-	}
+	#pragma omp parallel for schedule(static)
+        for (int i = 0; i < particles.size(); )
 }
 
-void world_t::computeOneParticleForces(particle_t &particle, double *dmin, double *davg, int *navg)
+void world_omp_t::computeOneParticleForces(particle_t &particle, double *dmin, double *davg, int *navg)
 {
 	int numBinPerEdge = grid.getNumBinPerEdge();
 
@@ -100,7 +102,7 @@ void world_t::computeOneParticleForces(particle_t &particle, double *dmin, doubl
 	}
 }
 
-void world_t::computeOneParticleForcesByBin(particle_t &particle, int binIndex, double *dmin, double *davg, int *navg)
+void world_omp_t::computeOneParticleForcesByBin(particle_t &particle, int binIndex, double *dmin, double *davg, int *navg)
 {
 	int start, end;
 	//The divisions is like {3, 5, 8, 10 ... particles.size()}
@@ -125,7 +127,7 @@ void world_t::computeOneParticleForcesByBin(particle_t &particle, int binIndex, 
 
 }
 
-void world_t::moveParticles()
+void world_omp_t::moveParticles()
 {	
 	//Parallelizable
 	for(int i = 0; i < particles.size(); i++)
@@ -135,22 +137,22 @@ void world_t::moveParticles()
 }
 
 
-/*vector<int> world_t::getDivisions()
+/*vector<int> world_omp_t::getDivisions()
 {
 	return divisions;
 }*/
 
-grid_t world_t::getGrid()
+grid_t world_omp_t::getGrid()
 {
 	return grid;
 }
 
-void world_t::setDivisions(vector<int> new_divisions)
+void world_omp_t::setDivisions(vector<int> new_divisions)
 {
 	divisions = new_divisions;
 }
 
-void world_t::setGrid(grid_t new_grid)
+void world_omp_t::setGrid(grid_t new_grid)
 {
 	grid = new_grid;
 }
