@@ -10,7 +10,7 @@ CFLAGS = -O3
 LIBS =
 
 
-TARGETS = serial-try
+TARGETS = serial-try openmp-try
 
 all:	$(TARGETS)
 
@@ -28,7 +28,8 @@ all:	$(TARGETS)
 #	$(MPCC) -o $@ $(LIBS) $(MPILIBS) mpi.o common.o
 serial-try: serial-try.o world.o grid.o common.o
 	$(CC) -o $@ $(LIBS) serial-try.o world.o grid.o common.o
-
+openmp-try: openmp-try.o world_omp.o grid.o common.o
+	$(CC) -o $@ $(LIBS) $(OPENMP) openmp-try.o world_omp.o grid.o common.o
 #autograder.o: autograder.cpp common.h
 #	$(CC) -c $(CFLAGS) autograder.cpp
 #openmp.o: openmp.cpp common.h
@@ -37,6 +38,8 @@ serial-try: serial-try.o world.o grid.o common.o
 #	$(CC) -c $(CFLAGS) serial.cpp
 serial-try.o: serial-try.cpp world.h common.h grid.h world.cpp common.cpp grid.cpp
 	$(CC) -c $(CFLAGS) serial-try.cpp
+openmp-try.o: openmp-try.cpp world_omp.h common.h grid.h world_omp.cpp common.cpp grid.cpp
+	$(CC) -c $(OPENMP) $(CFLAGS) openmp-try.cpp
 
 #pthreads.o: pthreads.cpp common.h
 #	$(CC) -c $(CFLAGS) pthreads.cpp
@@ -47,6 +50,9 @@ serial-try.o: serial-try.cpp world.h common.h grid.h world.cpp common.cpp grid.c
 
 world.o: world.cpp world.h common.h common.cpp grid.h grid.cpp
 	$(CC) -c $(CFLAGS) world.cpp
+
+world_omp.o: world_omp.cpp world_omp.h common.h common.cpp grid.h grid.cpp
+	$(CC) -c $(CFLAGS) $(OPENMP) world_omp.cpp
 	
 grid.o: grid.cpp grid.h common.h common.cpp
 	$(CC) -c $(CFLAGS) grid.cpp

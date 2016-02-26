@@ -15,6 +15,11 @@ struct direction
 	int y_change;
 };
 
+struct bin_t
+{
+	vector<particle_t *> particlesInBin;
+};
+
 class world_omp_t {
 
 private:
@@ -37,19 +42,19 @@ private:
 public:
   vector<particle_t> particles;
   
-	world_t(grid_t outGrid, int numParticles, int numBins);
+	world_omp_t(grid_t outGrid, int numParticles, int numBins);
 
-	void resetDivision();
+	void resetDivision(vector<bin_t> &bins, omp_lock_t* locks);
 
-	void relocateAllParticles();
+	void relocateAllParticles(vector<bin_t> &bins, omp_lock_t* locks);
 
-	int relocateOneParticle(particle_t &p);
+	int relocateOneParticle(vector<bin_t> &bins, particle_t &p, omp_lock_t* locks);
 
-	void computeAllParticleForces(double *dmin, double *davg, int *navg);
+	void computeAllParticleForces(double *dmin, double *davg, int *navg, vector<bin_t> &bins);
 
-	void computeOneParticleForces(particle_t &particle, double *dmin, double *davg, int *navg);
+	void computeOneParticleForces(particle_t &particle, double *dmin, double *davg, int *navg, vector<bin_t> &bins);
 
-	void computeOneParticleForcesByBin(particle_t &particle, int binIndex, double *dmin, double *davg, int *navg);
+	void computeOneParticleForcesByBin(particle_t &particle, int binIndex, double *dmin, double *davg, int *navg, vector<bin_t> &bins);
 
 	void moveParticles();
 
@@ -64,7 +69,5 @@ public:
 };
 
 bool ifSameParticle(const particle_t &a, const particle_t &b);
-
-bool ascending(const particle_t &a, const particle_t &b);
 
 #endif

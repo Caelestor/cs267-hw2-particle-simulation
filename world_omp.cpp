@@ -1,12 +1,12 @@
 #include <vector>
-#include "world.h"
+#include "world_omp.h"
 #include <stdlib.h>
 
 using namespace std;
 
-#define RECOLATE_BATCH_SIZE	100
-#define FORCE_BATCH_SIZE	100
-#define MOVE_BATCH_SIZE		100
+#define RELOCATE_BATCH_SIZE	125
+#define FORCE_BATCH_SIZE	125
+#define MOVE_BATCH_SIZE		125
 
 
 direction Directions[] = { {-1,-1}, {-1,0}, {-1,1}, {0,-1}, {0,0}, {0,1}, {1,-1}, {1,0}, {1,1} };
@@ -20,57 +20,63 @@ world_omp_t::world_omp_t(grid_t outGrid, int numParticles, int numBins)
 }
 
 
-void world_omp_t::resetDivision()
+void world_omp_t::resetDivision(vector<bin_t> &bins, omp_lock_t* locks)
 {
-	relocateAllParticles();
-
-	sort(particles.begin(), particles.end(), ascending);
-
-	int divisionLine = 0;
-	for (int i = 0; i < particles.size(); i++)
-	{
-		while(particles[i].binNumber > divisionLine)
-		{
-			divisions[divisionLine] = i;
-			divisionLine++;
-		}
-	}
-
-	for (int j = divisionLine; j < divisions.size(); j++)
-	{
-		divisions[j] = particles.size();
-	}
+	#pragma omp parallel for
+	for(int i = 0; i < bins.size(); i++)
+		bins[i].particlesInBin.clear();
+	
+	relocateAllParticles(bins, locks);
 }
 
-void world_omp_t::relocateAllParticles()
-{
-	#pragma omp parallel for schedule(static, RELOCATE_BATCH_SIZE)
+void world_omp_t::relocateAllParticles(vector<bin_t> &bins, omp_lock_t* locks)
+{	
+	#pragma omp parallel for
 	for(int i = 0; i < particles.size(); i++)
 	{
-		particles[i].binNumber = relocateOneParticle(particles[i]);
+		relocateOneParticle(bins, particles[i], locks);
 	}
 }
 
-int world_omp_t::relocateOneParticle(particle_t &particle)
+int world_omp_t::relocateOneParticle(vector<bin_t> &bins, particle_t &particle, omp_lock_t* locks)
 {
 	int bin_x = particle.x / grid.getBinSize();
 	int bin_y = particle.y / grid.getBinSize();
-	int ans = bin_x + bin_y * grid.getNumBinPerEdge();
-	return ans;
+	int binNumber = bin_x + bin_y * grid.getNumBinPerEdge();
+	particle_t* p = &particle;
+	omp_set_lock(locks+binNumber);
+	bins[binNumber].particlesInBin.push_back(p);
+	omp_unset_lock(locks+binNumber);
 }
 
-void world_omp_t::computeAllParticleForces(double *dmin, double *davg, int *navg)
+void world_omp_t::computeAllParticleForces(double *dmin, double *davg, int *navg, vector<bin_t> &bins)
 {
-	#pragma omp parallel for schedule(static)
-        for (int i = 0; i < particles.size(); )
+	#pragma omp parallel for shared(bins)
+        for (int i = 0; i < particles.size(); i+=FORCE_BATCH_SIZE)
+	{
+		double individual_dmin = 1.0;
+		double individual_davg = 0.0;
+		int individual_navg = 0;
+		vector<bin_t> tmp = bins;
+		for (int j = i; j < min(i+FORCE_BATCH_SIZE, particles.size()); j++)
+		{
+			computeOneParticleForces(particles[j], &individual_dmin, &individual_davg, &individual_navg, tmp);
+		}
+		#pragma omp critical
+		{
+			*dmin = min(*dmin, individual_dmin);
+			*davg += individual_davg;
+			*navg += individual_navg;
+		}
+	}
 }
 
-void world_omp_t::computeOneParticleForces(particle_t &particle, double *dmin, double *davg, int *navg)
+void world_omp_t::computeOneParticleForces(particle_t &particle, double *dmin, double *davg, int *navg, vector<bin_t> &bins)
 {
 	int numBinPerEdge = grid.getNumBinPerEdge();
 
-	int bin_x = particle.binNumber % numBinPerEdge;
-	int bin_y = particle.binNumber / numBinPerEdge;
+	int bin_x = particle.x / grid.getBinSize();
+	int bin_y = particle.y / grid.getBinSize();
 
 	particle.ax = 0;
 	particle.ay = 0;
@@ -83,7 +89,7 @@ void world_omp_t::computeOneParticleForces(particle_t &particle, double *dmin, d
 			int bin_x1 = bin_x + Directions[i].x_change;
 			int bin_y1 = bin_y + Directions[i].y_change;
 			int binIndex = bin_x1 + bin_y1 * numBinPerEdge;
-			computeOneParticleForcesByBin(particle, binIndex, dmin, davg, navg);
+			computeOneParticleForcesByBin(particle, binIndex, dmin, davg, navg, bins);
 		}
 	}
 	//When the particle belongs to a bin that is an edge bin, i.e., the bin has less than eight neighbor bins:
@@ -96,33 +102,18 @@ void world_omp_t::computeOneParticleForces(particle_t &particle, double *dmin, d
 			if((bin_x1 >= 0 && bin_x1 < numBinPerEdge) && (bin_y1 >= 0 && bin_y1 < numBinPerEdge))
 			{
 				int binIndex = bin_x1 + bin_y1 * numBinPerEdge;
-				computeOneParticleForcesByBin(particle, binIndex, dmin, davg, navg);
+				computeOneParticleForcesByBin(particle, binIndex, dmin, davg, navg, bins);
 			}
 		}
 	}
 }
 
-void world_omp_t::computeOneParticleForcesByBin(particle_t &particle, int binIndex, double *dmin, double *davg, int *navg)
+void world_omp_t::computeOneParticleForcesByBin(particle_t &particle, int binIndex, double *dmin, double *davg, int *navg, vector<bin_t> &bins)
 {
-	int start, end;
-	//The divisions is like {3, 5, 8, 10 ... particles.size()}
-	if (binIndex == 0)
+	int iterNum = bins[binIndex].particlesInBin.size();
+	for(int i = 0; i < iterNum; i++)
 	{
-		start = 0;
-		end = divisions[0];
-	}
-	else
-	{
-		start = divisions[binIndex - 1];
-		end = divisions[binIndex];
-	}
-
-	for (int i = start; i < end; i++)
-	{
-		if(!ifSameParticle(particle, particles[i]))
-		{
-			apply_force(particle, particles[i], dmin, davg, navg);
-		}
+		apply_force(particle, *(bins[binIndex].particlesInBin[i]), dmin, davg, navg);
 	}
 
 }
@@ -130,6 +121,7 @@ void world_omp_t::computeOneParticleForcesByBin(particle_t &particle, int binInd
 void world_omp_t::moveParticles()
 {	
 	//Parallelizable
+	#pragma omp parallel for
 	for(int i = 0; i < particles.size(); i++)
 	{
 		move(particles[i]);
@@ -159,10 +151,5 @@ void world_omp_t::setGrid(grid_t new_grid)
 
 bool ifSameParticle(const particle_t &a, const particle_t &b)
 {
-	return (a.binNumber == b.binNumber) && (a.x == b.x) && (a.y == b.y);  
-}
-
-bool ascending(const particle_t &a, const particle_t &b)
-{
-	return (a.binNumber < b.binNumber);
+	return (a.x == b.x) && (a.y == b.y);  
 }
