@@ -3,7 +3,7 @@
 
 #include <vector>
 #include <cstdio>
-#include "common_new.h"
+#include "common.h"
 
 
 class grid_t {

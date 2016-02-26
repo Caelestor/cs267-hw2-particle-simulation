@@ -7,7 +7,16 @@
 
 #define MARGIN      0
 
+#define density	0.0005
+#define mass	0.01
+#define cutoff	0.01
+#define min_r	(cutoff/100)
+#define dt	0.0005
+
+
 using namespace std;
+
+
 
 //
 //  benchmarking program
@@ -40,10 +49,10 @@ int main( int argc, char **argv )
     set_size( n );
 
     //particle_t *particles = (particle_t*) malloc( n * sizeof(particle_t) );
-    double grid_size = get_size();
-    double grid_cutoff = get_cutoff();
+    double grid_size = sqrt(density * n);
+    
     //Generate a new grid with myGridSize = get_size(), myBinSize = get_cutoff()+MARGIN, and myParticleNum = n;
-    grid_t newGrid(grid_size, grid_cutoff + MARGIN, n);
+    grid_t newGrid(grid_size, cutoff + MARGIN, n);
 
     int bin_number = newGrid.getNumBin();
     //Generate a nuw world with ...

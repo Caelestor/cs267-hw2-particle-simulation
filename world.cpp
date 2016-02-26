@@ -41,9 +41,9 @@ void world_t::resetDivision()
 void world_t::relocateAllParticles()
 {
 	//Parallalizable
-	for(auto & particle : particles)
+	for(int i = 0; i < particles.size(); i++)
 	{
-		particle.binNumber = relocateOneParticle(particle);
+		particles[i].binNumber = relocateOneParticle(particles[i]);
 	}
 }
 
@@ -57,9 +57,9 @@ int world_t::relocateOneParticle(particle_t &particle)
 
 void world_t::computeAllParticleForces(double *dmin, double *davg, int *navg)
 {
-	for (auto & particle : particles)
+	for (int i = 0; i < particles.size(); i++)
 	{
-		computeOneParticleForces(particle, dmin, davg, navg);
+		computeOneParticleForces(particles[i], dmin, davg, navg);
 	}
 }
 
@@ -128,9 +128,9 @@ void world_t::computeOneParticleForcesByBin(particle_t &particle, int binIndex, 
 void world_t::moveParticles()
 {	
 	//Parallelizable
-	for(auto & particle: particles)
+	for(int i = 0; i < particles.size(); i++)
 	{
-		move(particle);
+		move(particles[i]);
 	}
 }
 
@@ -155,12 +155,12 @@ void world_t::setGrid(grid_t new_grid)
 	grid = new_grid;
 }
 
-bool ifSameParticle(particle_t &a, particle_t &b)
+bool ifSameParticle(const particle_t &a, const particle_t &b)
 {
 	return (a.binNumber == b.binNumber) && (a.x == b.x) && (a.y == b.y);  
 }
 
-bool ascending(particle_t &a, particle_t &b)
+bool ascending(const particle_t &a, const particle_t &b)
 {
 	return (a.binNumber < b.binNumber);
 }

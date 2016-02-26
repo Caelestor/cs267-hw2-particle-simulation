@@ -1,0 +1,4 @@
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+srun: error: nid00283: task 0: Segmentation fault
+srun: Terminating job step 185137.0

@@ -10,47 +10,49 @@ CFLAGS = -O3
 LIBS =
 
 
-TARGETS = serial pthreads openmp mpi autograder
+TARGETS = serial-try
 
 all:	$(TARGETS)
 
-# serial: serial.o common.o
+#serial: serial.o common.o
 #	$(CC) -o $@ $(LIBS) serial.o common.o
-serial: serial-try.o common_new.o world.o grid.o
-	$(CC) -o $@ $(LIBS) serial-try.o common_new.o world.o grid.o
-autograder: autograder.o common.o
-	$(CC) -o $@ $(LIBS) autograder.o common.o
-# pthreads: pthreads.o common.o
+# serial: serial-try.o common_new.o world.o grid.o
+#	$(CC) -o $@ $(LIBS) serial-try.o common_new.o world.o grid.o
+#autograder: autograder.o common.o
+#	$(CC) -o $@ $(LIBS) autograder.o common.o
+#pthreads: pthreads.o common.o
 #	$(CC) -o $@ $(LIBS) -lpthread pthreads.o common.o
-openmp: openmp.o common.o
-	$(CC) -o $@ $(LIBS) $(OPENMP) openmp.o common.o
-mpi: mpi.o common.o
-	$(MPCC) -o $@ $(LIBS) $(MPILIBS) mpi.o common.o
+#openmp: openmp.o common.o
+#	$(CC) -o $@ $(LIBS) $(OPENMP) openmp.o common.o
+#mpi: mpi.o common.o
+#	$(MPCC) -o $@ $(LIBS) $(MPILIBS) mpi.o common.o
+serial-try: serial-try.o world.o grid.o common.o
+	$(CC) -o $@ $(LIBS) serial-try.o world.o grid.o common.o
 
-autograder.o: autograder.cpp common.h
-	$(CC) -c $(CFLAGS) autograder.cpp
-openmp.o: openmp.cpp common.h
-	$(CC) -c $(OPENMP) $(CFLAGS) openmp.cpp
-# serial.o: serial.cpp common.h
+#autograder.o: autograder.cpp common.h
+#	$(CC) -c $(CFLAGS) autograder.cpp
+#openmp.o: openmp.cpp common.h
+#	$(CC) -c $(OPENMP) $(CFLAGS) openmp.cpp
+#serial.o: serial.cpp common.h
 #	$(CC) -c $(CFLAGS) serial.cpp
-serial-try.o: serial-try.cpp common_new.h world.h
+serial-try.o: serial-try.cpp world.h common.h grid.h world.cpp common.cpp grid.cpp
 	$(CC) -c $(CFLAGS) serial-try.cpp
 
-# pthreads.o: pthreads.cpp common.h
+#pthreads.o: pthreads.cpp common.h
 #	$(CC) -c $(CFLAGS) pthreads.cpp
-mpi.o: mpi.cpp common.h
-	$(MPCC) -c $(CFLAGS) mpi.cpp
-# common.o: common.cpp common.h
+#mpi.o: mpi.cpp common.h
+#	$(MPCC) -c $(CFLAGS) mpi.cpp
+#common.o: common.cpp common.h
 #	$(CC) -c $(CFLAGS) common.cpp
 
-world.o: world.cpp world.h
+world.o: world.cpp world.h common.h common.cpp grid.h grid.cpp
 	$(CC) -c $(CFLAGS) world.cpp
 	
-grid.o: grid.cpp grid.h
+grid.o: grid.cpp grid.h common.h common.cpp
 	$(CC) -c $(CFLAGS) grid.cpp
 
-common_new.o: common_new.cpp common_new.h
-	$(CC) -c $(CFLAGS) common_new.cpp	
+common.o: common.cpp common.h
+	$(CC) -c $(CFLAGS) common.cpp	
 
 clean:
 	rm -f *.o $(TARGETS) *.stdout *.txt

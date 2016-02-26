@@ -21,6 +21,7 @@ typedef struct
   double vy;
   double ax;
   double ay;
+  int binNumber;
 } particle_t;
 
 //

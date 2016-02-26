@@ -3,7 +3,6 @@
 
 #include <vector>
 #include "grid.h"
-#include "common_new.h"
 #include <stdlib.h>
 #include <algorithm>
 
@@ -63,8 +62,8 @@ public:
 
 };
 
-bool ifSameParticle(particle_t &a, particle_t &b);
+bool ifSameParticle(const particle_t &a, const particle_t &b);
 
-bool ascending(particle_t &a, particle_t &b);
+bool ascending(const particle_t &a, const particle_t &b);
 
 #endif

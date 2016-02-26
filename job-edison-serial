@@ -6,4 +6,4 @@
 #SBATCH -e serial.%j.error
 #SBATCH -N 1
 
-srun -n 1 -c 1 ./serial -n 500 -o serial.txt
+srun -n 1 -c 1 ./serial-try -n 500 -o serial.txt
