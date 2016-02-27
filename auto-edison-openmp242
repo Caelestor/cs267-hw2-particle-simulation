@@ -1,0 +1,37 @@
+#!/bin/bash -l
+#SBATCH -p debug # change this option for non-debug runs
+#SBATCH -t 00:05:00
+#SBATCH -A mp309
+#SBATCH -o auto-openmp_new24.%j.stdout
+#SBATCH -e auto-openmp_new24.%j.error
+#SBATCH -N 1
+
+rm openmp_new.txt
+srun -n 1 -c 1 ./serial-try -n 500 -no -s openmp_new.txt
+export OMP_NUM_THREADS=1
+srun -n 1 -c 1 ./openmp_new -p 1 -n 500 -no -s openmp_new.txt
+export OMP_NUM_THREADS=2
+srun -n 1 -c 2 ./openmp_new -p 2 -n 500 -no -s openmp_new.txt
+export OMP_NUM_THREADS=4
+srun -n 1 -c 4 ./openmp_new -p 4 -n 500 -no -s openmp_new.txt
+export OMP_NUM_THREADS=6
+srun -n 1 -c 6 ./openmp_new -p 6 -n 500 -no -s openmp_new.txt
+export OMP_NUM_THREADS=12
+srun -n 1 -c 12 ./openmp_new -p 12 -n 500 -no -s openmp_new.txt
+export OMP_NUM_THREADS=18
+srun -n 1 -c 18 ./openmp_new -p 18 -n 500 -no -s openmp_new.txt
+export OMP_NUM_THREADS=24
+srun -n 1 -c 24 ./openmp_new -p 24 -n 500 -no -s openmp_new.txt
+export OMP_NUM_THREADS=2
+srun -n 1 -c 2 ./openmp_new -p 2 -n 1000 -no -s openmp_new.txt
+export OMP_NUM_THREADS=4
+srun -n 1 -c 4 ./openmp_new -p 4 -n 2000 -no -s openmp_new.txt
+export OMP_NUM_THREADS=6
+srun -n 1 -c 6 ./openmp_new -p 6 -n 3000 -no -s openmp_new.txt
+export OMP_NUM_THREADS=12
+srun -n 1 -c 12 ./openmp_new -p 12 -n 6000 -no -s openmp_new.txt
+export OMP_NUM_THREADS=18
+srun -n 1 -c 18 ./openmp_new -p 18 -n 9000 -no -s openmp_new.txt
+export OMP_NUM_THREADS=24
+srun -n 1 -c 24 ./openmp_new -p 24 -n 12000 -no -s openmp_new.txt
+./autograder -v openmp_new -s openmp_new.txt

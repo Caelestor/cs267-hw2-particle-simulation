@@ -63,17 +63,17 @@ int main( int argc, char **argv )
     world_omp_t newWorld(newGrid, n, bin_number);
     init_particles( n, newWorld.particles.data() );
    
-    vector<bin_t> bins(bin_number);
+  //  vector<bin_t> bins(bin_number);
 
     int p = read_int(argc, argv, "-p", 1);
     omp_set_num_threads(p);
 
-    omp_lock_t* locks = (omp_lock_t*) malloc(bin_number * sizeof(omp_lock_t));
+  //  omp_lock_t* locks = (omp_lock_t*) malloc(bin_number * sizeof(omp_lock_t));
 
-    for(int i = 0; i < bin_number; i++)
-    {
-        omp_init_lock(locks+i);
-    }
+  //  for(int i = 0; i < bin_number; i++)
+   // {
+    //    omp_init_lock(locks+i);
+   // }
 
 /* 
     for(int i = 0; i < newWorld.particles.size(); i++)
@@ -96,11 +96,11 @@ int main( int argc, char **argv )
         //
         //cout << step << endl;
         //cout << "meow0" << endl;
-        newWorld.resetDivision(bins, locks);
+        newWorld.resetDivision();
 
         //
         //cout << "meow1" << endl;
-        newWorld.computeAllParticleForces(&dmin, &davg, &navg, bins);
+        newWorld.computeAllParticleForces(&dmin, &davg, &navg);
 
         //
         //cout << "meow2" << endl;
@@ -155,7 +155,7 @@ int main( int argc, char **argv )
     //
     if( fsum )
         fclose( fsum );    
-    free(locks);
+//    free(locks);
     if( fsave )
         fclose( fsave );
     

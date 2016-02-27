@@ -31,7 +31,7 @@ int main( int argc, char **argv )
 
     char *autoname = read_string( argc, argv, "-v", NULL );
      
-    if (strcmp(autoname,"serial")==0){
+    if (strcmp(autoname,"serial-try")==0){
       if(fread) 
         while( fscanf (fread,"%d %lf",&n[count],&t[count]) != EOF ) 
           count++;
@@ -62,7 +62,7 @@ int main( int argc, char **argv )
       printf("\n\n");
     }
 
-    if (strcmp(autoname,"pthreads")==0 || strcmp(autoname,"openmp")==0 || strcmp(autoname,"mpi")==0){
+    if (strcmp(autoname,"pthreads")==0 || strcmp(autoname,"openmp_new")==0 || strcmp(autoname,"mpi")==0){
       if(fread){
         fscanf (fread,"%d %lf",&n[count],&t[count]);
         count++; p[0]=1;

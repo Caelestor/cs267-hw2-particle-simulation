@@ -1,6 +1,6 @@
 #!/bin/bash -l
 #SBATCH -p debug # change this option for non-debug runs
-#SBATCH -t 00:20:00
+#SBATCH -t 00:05:00
 #SBATCH -A mp309
 #SBATCH -o auto-openmp-try24.%j.stdout
 #SBATCH -e auto-openmp-try24.%j.error

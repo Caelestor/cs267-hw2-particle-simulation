@@ -10,7 +10,7 @@ CFLAGS = -O3
 LIBS =
 
 
-TARGETS = serial-try openmp-try
+TARGETS = autograder serial-try openmp-try openmp_new
 
 all:	$(TARGETS)
 
@@ -18,8 +18,8 @@ all:	$(TARGETS)
 #	$(CC) -o $@ $(LIBS) serial.o common.o
 # serial: serial-try.o common_new.o world.o grid.o
 #	$(CC) -o $@ $(LIBS) serial-try.o common_new.o world.o grid.o
-#autograder: autograder.o common.o
-#	$(CC) -o $@ $(LIBS) autograder.o common.o
+autograder: autograder.o common.o
+	$(CC) -o $@ $(LIBS) autograder.o common.o
 #pthreads: pthreads.o common.o
 #	$(CC) -o $@ $(LIBS) -lpthread pthreads.o common.o
 #openmp: openmp.o common.o
@@ -30,8 +30,13 @@ serial-try: serial-try.o world.o grid.o common.o
 	$(CC) -o $@ $(LIBS) serial-try.o world.o grid.o common.o
 openmp-try: openmp-try.o world_omp.o grid.o common.o
 	$(CC) -o $@ $(LIBS) $(OPENMP) openmp-try.o world_omp.o grid.o common.o
-#autograder.o: autograder.cpp common.h
-#	$(CC) -c $(CFLAGS) autograder.cpp
+openmp_new: openmp_new.o common.o libomp.o
+	$(CC) -o $@ $(LIBS) $(OPENMP) openmp_new.o common.o libomp.o
+
+
+
+autograder.o: autograder.cpp common.h
+	$(CC) -c $(CFLAGS) autograder.cpp
 #openmp.o: openmp.cpp common.h
 #	$(CC) -c $(OPENMP) $(CFLAGS) openmp.cpp
 #serial.o: serial.cpp common.h
@@ -40,6 +45,8 @@ serial-try.o: serial-try.cpp world.h common.h grid.h world.cpp common.cpp grid.c
 	$(CC) -c $(CFLAGS) serial-try.cpp
 openmp-try.o: openmp-try.cpp world_omp.h common.h grid.h world_omp.cpp common.cpp grid.cpp
 	$(CC) -c $(OPENMP) $(CFLAGS) openmp-try.cpp
+openmp_new.o: openmp_new.cpp libomp.h libomp.cpp common.h common.cpp
+	$(CC) -c $(OPENMP) $(CFLAGS) openmp_new.cpp
 
 #pthreads.o: pthreads.cpp common.h
 #	$(CC) -c $(CFLAGS) pthreads.cpp
@@ -47,6 +54,9 @@ openmp-try.o: openmp-try.cpp world_omp.h common.h grid.h world_omp.cpp common.cp
 #	$(MPCC) -c $(CFLAGS) mpi.cpp
 #common.o: common.cpp common.h
 #	$(CC) -c $(CFLAGS) common.cpp
+libomp.o: libomp.cpp libomp.h
+	$(CC) -c $(CFLAGS) libomp.cpp
+
 
 world.o: world.cpp world.h common.h common.cpp grid.h grid.cpp
 	$(CC) -c $(CFLAGS) world.cpp
