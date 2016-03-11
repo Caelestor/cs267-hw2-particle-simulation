@@ -67,8 +67,8 @@ void world_t::computeOneParticleForces(particle_t &particle, double *dmin, doubl
 {
 	int numBinPerEdge = grid.getNumBinPerEdge();
 
-	int bin_x = particle.binNumber % numBinPerEdge;
-	int bin_y = particle.binNumber / numBinPerEdge;
+	int bin_x = particle.x / grid.getBinSize();
+	int bin_y = particle.y / grid.getBinSize();
 
 	particle.ax = 0;
 	particle.ay = 0;
@@ -157,10 +157,16 @@ void world_t::setGrid(grid_t new_grid)
 
 bool ifSameParticle(const particle_t &a, const particle_t &b)
 {
-	return (a.binNumber == b.binNumber) && (a.x == b.x) && (a.y == b.y);  
+	return (a.x == b.x) && (a.y == b.y);  
 }
 
 bool ascending(const particle_t &a, const particle_t &b)
 {
+//	int bin_ax = a.x / grid.getBinSize();
+//	int bin_ay = a.y / grid.getBinSize();
+//	int binNumber_a = bin_ax + bin_ay * grid.getNumBinPerEdge();
+//	int bin_bx = b.x / grid.getBinSize();
+//	int bin_by = b.y / grid.getBinSize();
+//	int binNumber_b = bin_bx + bin_by * grid.getNumBinPerEdge();
 	return (a.binNumber < b.binNumber);
 }

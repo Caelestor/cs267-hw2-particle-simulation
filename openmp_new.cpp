@@ -75,15 +75,17 @@ int main( int argc, char **argv )
         davg = 0.0;
 	dmin = 1.0;
         
-        #pragma omp for schedule(static)
+      //  #pragma omp for schedule(static)
+	#pragma omp for
         for (int i = 0; i < binNumber; i++)
         {
             bins[i].particlesInBin.clear();
         }
       //  cout << "moew1" << endl;
 
-        #pragma omp for schedule(static, 125)
-        for(int i = 0; i < n; i++)
+     //   #pragma omp for schedule(static, 125)
+      	#pragma omp for
+	for(int i = 0; i < n; i++)
         {
             int bin_x = particles[i].x / cutoff;
             int bin_y = particles[i].y / cutoff;
@@ -96,7 +98,7 @@ int main( int argc, char **argv )
         //  compute all forces
         //
       //  cout << "meow2" << endl;
-        #pragma omp for reduction (+:navg) reduction(+:davg) schedule(static, 125)
+        #pragma omp for reduction (+:navg) reduction(+:davg)
         for( int i = 0; i < binNumber; i++ )
         {
 	    apply_force_per_bin(bins, i, binNumPerEdge, &dmin, &davg, &navg);  
@@ -106,7 +108,7 @@ int main( int argc, char **argv )
         //
         //  move particles
         //
-        #pragma omp for schedule(static, 125)
+        #pragma omp for
         for( int i = 0; i < n; i++ ) 
             move( particles[i] );
   

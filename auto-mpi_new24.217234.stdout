@@ -1,0 +1,64 @@
+n = 500, simulation time = 0.049079 seconds
+n = 500,n_proc = 1, simulation time = 0.055842 seconds
+n = 500,n_proc = 6, simulation time = 0.038585 seconds
+
+
+
+
+
+n = 500,n_proc = 12, simulation time = 0.036507 seconds
+
+
+
+
+
+
+
+
+
+
+
+n = 500,n_proc = 18, simulation time = 0.051831 seconds
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+n = 500,n_proc = 24, simulation time = 0.042141 seconds
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+n = 1000,n_proc = 2, simulation time = 0.09501 seconds

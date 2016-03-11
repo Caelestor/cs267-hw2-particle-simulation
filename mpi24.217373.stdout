@@ -1,0 +1,3 @@
+n = 500,n_proc = 24, simulation time = 0.301623 seconds, absmin = 0.008082, absavg = 0.733116
+The minimum distance is below 0.4 meaning that some particle is not interacting
+The average distance is below 0.8 meaning that most particles are not interacting

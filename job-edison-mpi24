@@ -6,4 +6,4 @@
 #SBATCH -o mpi24.%j.stdout
 #SBATCH -e mpi24.%j.error
 
-srun -n 24 ./mpi -n 500 -o mpi.txt
+srun -n 24 ./mpi_new -n 500 -o mpi_new.txt

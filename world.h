@@ -40,6 +40,8 @@ public:
 
 	void resetDivision();
 
+//	bool ascending(const particle_t &a, particle_t &b);
+
 	void relocateAllParticles();
 
 	int relocateOneParticle(particle_t &p);

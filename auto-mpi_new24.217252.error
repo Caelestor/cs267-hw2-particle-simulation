@@ -1,0 +1,350 @@
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: Setting TMPDIR to /tmp
+srun: error: nid00185: task 1: Segmentation fault
+srun: Terminating job step 217252.3
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+srun: error: nid00186: task 2: Segmentation fault
+srun: error: nid00183: task 0: Segmentation fault
+srun: error: nid00187: task 3: Segmentation fault
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: Setting TMPDIR to /tmp
+srun: error: nid00187: task 3: Segmentation fault
+srun: Terminating job step 217252.9
+srun: error: nid00184: task 0: Segmentation fault
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+srun: error: nid00186: task 2: Segmentation fault
+srun: error: nid00185: task 1: Segmentation fault
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+srun: error: nid00182: task 0: Segmentation fault
+srun: Terminating job step 217252.10
+srun: error: nid00190: task 4: Segmentation fault
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+srun: error: nid00188: task 2: Segmentation fault
+srun: error: nid00191: task 5: Segmentation fault
+srun: error: nid00183: task 1: Segmentation fault
+srun: error: nid00189: task 3: Segmentation fault
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: Setting TMPDIR to /tmp
+srun: error: nid00205: task 9: Segmentation fault
+srun: Terminating job step 217252.11
+srun: error: nid00202: task 6: Segmentation fault
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+srun: error: nid00201: task 5: Segmentation fault
+srun: error: nid00184: task 0: Segmentation fault
+srun: error: nid00207: task 11: Segmentation fault
+srun: error: nid00203: task 7: Segmentation fault
+srun: error: nid00186: task 2: Segmentation fault
+srun: error: nid00204: task 8: Segmentation fault
+srun: error: nid00187: task 3: Segmentation fault
+srun: error: nid00200: task 4: Segmentation fault
+srun: error: nid00185: task 1: Segmentation fault
+srun: error: nid00206: task 10: Segmentation fault
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: Setting TMPDIR to /tmp
+srun: error: nid00182: task 0: Segmentation fault
+srun: Terminating job step 217252.12
+srun: error: nid00203: task 13: Segmentation fault
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+srun: error: nid00183: task 1: Segmentation fault
+srun: error: nid00191: task 9: Segmentation fault
+srun: error: nid00207: task 17: Segmentation fault
+srun: error: nid00202: task 12: Segmentation fault
+srun: error: nid00188: task 6: Segmentation fault
+srun: error: nid00185: task 3: Segmentation fault
+srun: error: nid00204: task 14: Segmentation fault
+srun: error: nid00205: task 15: Segmentation fault
+srun: error: nid00187: task 5: Segmentation fault
+srun: error: nid00189: task 7: Segmentation fault
+srun: error: nid00190: task 8: Segmentation fault
+srun: error: nid00201: task 11: Segmentation fault
+srun: error: nid00200: task 10: Segmentation fault
+srun: error: nid00184: task 2: Segmentation fault
+srun: error: nid00206: task 16: Segmentation fault
+srun: error: nid00186: task 4: Segmentation fault
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: Setting TMPDIR to /tmp
+srun: error: nid00182: task 0: Segmentation fault
+srun: Terminating job step 217252.13
+srun: error: nid00191: task 9: Segmentation fault
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+srun: error: nid00185: task 3: Segmentation fault
+srun: error: nid00190: task 8: Segmentation fault
+srun: error: nid00202: task 12: Segmentation fault
+srun: error: nid00211: task 21: Segmentation fault
+srun: error: nid00201: task 11: Segmentation fault
+srun: error: nid00212: task 22: Segmentation fault
+srun: error: nid00205: task 15: Segmentation fault
+srun: error: nid00204: task 14: Segmentation fault
+srun: error: nid00210: task 20: Segmentation fault
+srun: error: nid00183: task 1: Segmentation fault
+srun: error: nid00200: task 10: Segmentation fault
+srun: error: nid00186: task 4: Segmentation fault
+srun: error: nid00207: task 17: Segmentation fault
+srun: error: nid00187: task 5: Segmentation fault
+srun: error: nid00189: task 7: Segmentation fault
+srun: error: nid00184: task 2: Segmentation fault
+srun: error: nid00188: task 6: Segmentation fault
+srun: error: nid00213: task 23: Segmentation fault
+srun: error: nid00208: task 18: Segmentation fault
+srun: error: nid00209: task 19: Segmentation fault
+srun: error: nid00203: task 13: Segmentation fault
+srun: error: nid00206: task 16: Segmentation fault
+Sat Mar  5 16:15:27 2016: [unset]:_pmi_alps_get_apid:alps response not OKAY
+Sat Mar  5 16:15:27 2016: [unset]:_pmi_init:_pmi_alps_init returned -1

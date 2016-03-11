@@ -1,0 +1,14 @@
+n = 500, simulation time = 0.049742 seconds
+n = 500,n_proc = 1, simulation time = 0.05684 seconds
+n = 500,n_proc = 2, simulation time = 0.049139 seconds
+n = 500,n_proc = 4, simulation time = 0.051409 seconds
+n = 500,n_proc = 6, simulation time = 0.034111 seconds
+n = 500,n_proc = 12, simulation time = 0.035722 seconds
+n = 500,n_proc = 18, simulation time = 0.048696 seconds
+n = 500,n_proc = 24, simulation time = 0.044993 seconds
+n = 1000,n_proc = 2, simulation time = 0.097073 seconds
+n = 2000,n_proc = 4, simulation time = 0.149279 seconds
+n = 3000,n_proc = 6, simulation time = 0.222839 seconds
+n = 6000,n_proc = 12, simulation time = 0.379951 seconds
+n = 9000,n_proc = 18, simulation time = 0.624906 seconds
+n = 12000,n_proc = 24, simulation time = 0.856107 seconds
