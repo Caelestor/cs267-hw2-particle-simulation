@@ -1,0 +1,24 @@
+#!/bin/bash -l
+#SBATCH -p debug # change this option for non-debug runs
+#SBATCH -t 00:20:00
+#SBATCH -N 24
+#SBATCH -A mp309
+#SBATCH -o auto-mpi_cf_Alltoallv.%j.stdout
+#SBATCH -e auto-mpi_cf_Alltoallv.%j.error
+
+rm auto-mpi_cf_Alltoallv.txt
+srun -n 1 -N 1 ./serial-try -no -n 500 -o serial_500n_1p.txt -s auto-mpi_cf_Alltoallv.txt
+srun -n 1 -N 1 ./mpi_cf_Alltoallv -no -p 1 -n 500 -o auto-mpi_cf_Alltoallv_500n_1p.txt -s auto-mpi_cf_Alltoallv.txt
+srun -n 2 -N 2 ./mpi_cf_Alltoallv -no -p 2 -n 500 -o auto-mpi_cf_Alltoallv_500n_2p.txt -s auto-mpi_cf_Alltoallv.txt
+srun -n 4 -N 4 ./mpi_cf_Alltoallv -no -p 4 -n 500 -o auto-mpi_cf_Alltoallv_500n_4p.txt -s auto-mpi_cf_Alltoallv.txt
+srun -n 6 -N 6 ./mpi_cf_Alltoallv -no -p 6 -n 500 -o auto-mpi_cf_Alltoallv_500n_6p.txt -s auto-mpi_cf_Alltoallv.txt
+srun -n 12 -N 12 ./mpi_cf_Alltoallv -no -p 12 -n 500 -o auto-mpi_cf_Alltoallv_500n_12p.txt -s auto-mpi_cf_Alltoallv.txt
+srun -n 18 -N 18 ./mpi_cf_Alltoallv -no -p 18 -n 500 -o auto-mpi_cf_Alltoallv_500n_18p.txt -s auto-mpi_cf_Alltoallv.txt
+srun -n 24 -N 24 ./mpi_cf_Alltoallv -no -p 24 -n 500 -o auto-mpi_cf_Alltoallv_500n_24p.txt -s auto-mpi_cf_Alltoallv.txt
+srun -n 2 -N 2 ./mpi_cf_Alltoallv -no -p 2 -n 1000 -o auto-mpi_cf_Alltoallv_1000n_2p.txt -s auto-mpi_cf_Alltoallv.txt
+srun -n 4 -N 4 ./mpi_cf_Alltoallv -no -p 4 -n 2000 -o auto-mpi_cf_Alltoallv_2000n_4p.txt -s auto-mpi_cf_Alltoallv.txt
+srun -n 6 -N 6 ./mpi_cf_Alltoallv -no -p 6 -n 3000 -o auto-mpi_cf_Alltoallv_3000n_6p.txt -s auto-mpi_cf_Alltoallv.txt
+srun -n 12 -N 12 ./mpi_cf_Alltoallv -no -p 12 -n 6000 -o auto-mpi_cf_Alltoallv_6000n_12p.txt -s auto-mpi_cf_Alltoallv.txt
+srun -n 18 -N 18 ./mpi_cf_Alltoallv -no -p 18 -n 9000 -o auto-mpi_cf_Alltoallv_9000n_18p.txt -s auto-mpi_cf_Alltoallv.txt
+srun -n 24 -N 24 ./mpi_cf_Alltoallv -no -p 24 -n 12000 -o auto-mpi_cf_Alltoallv_12000n_24p.txt -s auto-mpi_cf_Alltoallv.txt
+./autograder -v mpi -s auto-mpi_cf_Alltoallv.txt

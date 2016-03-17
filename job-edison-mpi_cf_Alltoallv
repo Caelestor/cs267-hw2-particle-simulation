@@ -1,0 +1,10 @@
+#!/bin/bash -l
+#SBATCH -p debug # change this option for non-debug runs
+#SBATCH -t 00:03:00
+#SBATCH -N 24
+#SBATCH -A mp309
+#SBATCH -o mpi_cf_Alltoallv.%j.stdout
+#SBATCH -e mpi_cf_Alltoallv.%j.error
+
+srun -n 24 ./mpi_cf_Alltoallv -n 500 -o mpi_out_cf_Alltoallv.txt -s mpi_sum_cf_Alltoallv.txt
+
