@@ -48,7 +48,8 @@ int main( int argc, char **argv )
     //  set up MPI
     //
     int n_proc, rank;
-    MPI_Request request;// for the non-blocking send.
+    MPI_Status status;
+    MPI_Request request[n_proc];// for the non-blocking send.
     MPI_Init( &argc, &argv );
     MPI_Comm_size( MPI_COMM_WORLD, &n_proc );
     MPI_Comm_rank( MPI_COMM_WORLD, &rank );
@@ -361,7 +362,7 @@ int main( int argc, char **argv )
         {
             if(nlocalsReceived[p]>0 and p != rank)
             {
-                MPI_Irecv(&(local[nlocalNative + ntotalReceived]), nlocalsReceived[p], PARTICLE, p, step, MPI_COMM_WORLD, &request);
+                MPI_Irecv(&(local[nlocalNative + ntotalReceived]), nlocalsReceived[p], PARTICLE, p, step, MPI_COMM_WORLD, &(request[p]));
                 ntotalReceived += nlocalsReceived[p];
             }
         }
@@ -369,6 +370,9 @@ int main( int argc, char **argv )
         for (int p =0; p<n_proc; p++)
             if(partition_sizes[p]>0 and p != rank)
                 MPI_Send(&(particles_scatter[partition_offsets[p]]), partition_sizes[p], PARTICLE, p, step, MPI_COMM_WORLD);
+        for (int p =0; p<n_proc; p++)
+            if(nlocalsReceived[p]>0 and p != rank)
+                MPI_Wait(&(request[p]), &status);
 
         //save time
         if ( (step +1)%SAVEFREQ == 0 and rank == 0)
