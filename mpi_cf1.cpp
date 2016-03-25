@@ -501,8 +501,7 @@ int main( int argc, char **argv )
     }
 
     simulation_time = read_timer( ) - simulation_time;
-    cout << "*****************rank "<<rank<<" finished"<<"**************"<<endl;
-    cout.flush();
+
 
     if (rank == 0) 
     {  
@@ -524,8 +523,7 @@ int main( int argc, char **argv )
         if (absavg < 0.8) fprintf (fsave,"\nThe average distance is below 0.8 meaning that most particles are not interacting");
         fprintf(fsum,"absmin = %lf, absavg = %lf", absmin, absavg );
       }
-      fprintf(fsave,"hello\n");     
-      fflush(fsave);
+
     // Printing summary data
        
       // if( fsum )
@@ -534,8 +532,7 @@ int main( int argc, char **argv )
       //    fflush(fsum);
       // }
     }
-    cout << "I am out, about to close and free variables"<< endl;
-    cout.flush();
+
     //
     //  release resources
     //
