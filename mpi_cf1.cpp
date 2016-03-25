@@ -48,12 +48,13 @@ int main( int argc, char **argv )
     //  set up MPI
     //
     int n_proc, rank;
-    MPI_Status status;
-    MPI_Request request[n_proc];// for the non-blocking send.
+
     MPI_Init( &argc, &argv );
     MPI_Comm_size( MPI_COMM_WORLD, &n_proc );
     MPI_Comm_rank( MPI_COMM_WORLD, &rank );
-    
+  
+    MPI_Status status;
+    MPI_Request request[n_proc];// for the non-blocking send.  
     //
     //  allocate generic resources
     //
@@ -282,7 +283,7 @@ int main( int argc, char **argv )
         // 
         //flatten the vector assignProc and keep partition sizes/offsets
         // 
-        cout << "The partition in Proc "<<rank<<" is: ";
+        // cout << "The partition in Proc "<<rank<<" is: ";
         for (int proc = 0; proc < n_proc; proc++)
         {
             if (proc == 0)
@@ -292,15 +293,15 @@ int main( int argc, char **argv )
             for (int part = 0; part < assignProc[proc].size(); part ++)
                 particles_scatter[partition_offsets[proc] + part ] = *(assignProc[proc][part]);
             partition_sizes[proc] = assignProc[proc].size();
-            cout << partition_sizes[proc] << ", ";
+            // cout << partition_sizes[proc] << ", ";
         } 
         if ( (step +1)%SAVEFREQ == 0 and rank == 0)
         {
             time_binning = read_timer() - time_binning;
             time_commu1 = read_timer();
         }
-        cout << "--> "<< nlocalNativeNew <<" localNatives" <<endl;
-        cout.flush();
+        // cout << "--> "<< nlocalNativeNew <<" localNatives" <<endl;
+        // cout.flush();
 
         // //let's check that the particles are allright
         // cout << endl << "The particles gathered have for x:"<< endl;
@@ -345,16 +346,16 @@ int main( int argc, char **argv )
         // MPI_Alltoallv( particles_scatter, partition_sizes, partition_offsets, PARTICLE,
         //                local, nlocalsReceived, local_offsets, PARTICLE, MPI_COMM_WORLD );
 
-        char out2[102400], *put2 = out2;
-        ntotalReceived = nlocalsReceived[0];
-        put2 += sprintf(put2, "%d -> %d part, ", 0, nlocalsReceived[0]);
-        for (int p = 1; p<n_proc; p++)
-        {
-            ntotalReceived += nlocalsReceived[p];
-            put2 += sprintf(put2, "%d -> %d part, ", p, nlocalsReceived[p]);
-        }
-        printf("I am proc %d and will receive: %s = %d particles\n", rank, out2, ntotalReceived);
-        fflush(stdout);
+        // char out2[102400], *put2 = out2;
+        // ntotalReceived = nlocalsReceived[0];
+        // put2 += sprintf(put2, "%d -> %d part, ", 0, nlocalsReceived[0]);
+        // for (int p = 1; p<n_proc; p++)
+        // {
+        //     ntotalReceived += nlocalsReceived[p];
+        //     put2 += sprintf(put2, "%d -> %d part, ", p, nlocalsReceived[p]);
+        // }
+        // printf("I am proc %d and will receive: %s = %d particles\n", rank, out2, ntotalReceived);
+        // fflush(stdout);
 
         ntotalReceived = 0;
         // non-blocking receives
@@ -408,26 +409,26 @@ int main( int argc, char **argv )
             time_computing = read_timer();
         }
 
-        // 
-        // print the received and bining of each processor
-        // 
-        char out1[102400], *put1 = out1; //fucking learn to clear arrays!!!
-        int partsInBin;
-        for (int b = 0; b < binNumber; b++)
-        {
-            partsInBin = bins[b].particlesInBin.size();
-            if (partsInBin > 0)
-            {
-                put1 += sprintf(put1, "\tBin %d has %d parts: ", b, partsInBin);
-                for(int p =0; p< partsInBin; p++)
-                {
-                    current_part = *(bins[b].particlesInBin[p]);
-                    put1 += sprintf(put1, "%f, ", current_part.x);
-                }
-            }
-        }
-        printf("\nI am proc %d and I have received %d part. Now I have %d natives, all bined as:\n %s \n",rank,ntotalReceived, nlocalNativeNew, out1);
-        fflush(stdout);
+        // // 
+        // // print the received and bining of each processor
+        // // 
+        // char out1[102400], *put1 = out1; //fucking learn to clear arrays!!!
+        // int partsInBin;
+        // for (int b = 0; b < binNumber; b++)
+        // {
+        //     partsInBin = bins[b].particlesInBin.size();
+        //     if (partsInBin > 0)
+        //     {
+        //         put1 += sprintf(put1, "\tBin %d has %d parts: ", b, partsInBin);
+        //         for(int p =0; p< partsInBin; p++)
+        //         {
+        //             current_part = *(bins[b].particlesInBin[p]);
+        //             put1 += sprintf(put1, "%f, ", current_part.x);
+        //         }
+        //     }
+        // }
+        // printf("\nI am proc %d and I have received %d part. Now I have %d natives, all bined as:\n %s \n",rank,ntotalReceived, nlocalNativeNew, out1);
+        // fflush(stdout);
 
         //
         //  save current step if necessary (slightly different semantics than in other codes)
@@ -449,8 +450,8 @@ int main( int argc, char **argv )
             time_moving = read_timer();
         }
 
-        printf("Porc %d has FORCE his particles\n",rank);
-        fflush(stdout);
+        // printf("Porc %d has FORCE his particles\n",rank);
+        // fflush(stdout);
         if( find_option( argc, argv, "-no" ) == -1 )
         {
           
@@ -500,13 +501,13 @@ int main( int argc, char **argv )
     }
 
     simulation_time = read_timer( ) - simulation_time;
-    // cout << "*****************rank "<<rank<<" finished"<<"**************"<<endl;
-    // cout.flush();
+    cout << "*****************rank "<<rank<<" finished"<<"**************"<<endl;
+    cout.flush();
 
     if (rank == 0) 
     {  
-      printf( "\n************\nN = %d, n = %d, simulation time = %g seconds\n**********\n",
-                                 n_proc,    n,               simulation_time);
+      // printf( "\n************\nN = %d, n = %d, simulation time = %g seconds\n**********\n",
+      //                            n_proc,    n,               simulation_time);
 
       if( find_option( argc, argv, "-no" ) == -1 )
       {
@@ -521,16 +522,20 @@ int main( int argc, char **argv )
         printf("absmin = %lf, absavg = %lf", absmin, absavg );
         if (absmin < 0.4) fprintf (fsave,"\n\n\nThe minimum distance is below 0.4 meaning that some particle is not interacting\n\n********\n\n");
         if (absavg < 0.8) fprintf (fsave,"\nThe average distance is below 0.8 meaning that most particles are not interacting");
+        fprintf(fsum,"absmin = %lf, absavg = %lf", absmin, absavg );
       }
-      fprintf(fsave,"\n");     
+      fprintf(fsave,"hello\n");     
+      fflush(fsave);
     // Printing summary data
        
-      if( fsum )
-      {
-         fprintf(fsum,"%d %d %g\n",n,n_proc,simulation_time);
-      }
+      // if( fsum )
+      // {
+      //    fprintf(fsum,"%d %d %g\n",n,n_proc,simulation_time);
+      //    fflush(fsum);
+      // }
     }
-  
+    cout << "I am out, about to close and free variables"<< endl;
+    cout.flush();
     //
     //  release resources
     //
