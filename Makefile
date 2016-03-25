@@ -34,7 +34,7 @@ openmp_new: openmp_new.o common_new.o libomp.o
 	$(CC) -o $@ $(LIBS) $(OPENMP) openmp_new.o common_new.o libomp.o
 mpi_new: mpi_new.o common.o libmpi.o
 	$(MPCC) -o $@ $(LIBS) $(MPILIBS) mpi_new.o common_new.o libmpi.o
-mpi_cf1: mpi_cf1.o common_new.o libmpi.o
+mpi_cf1: mpi_cf1.o common.o libmpi.o
 	$(MPCC) -o $@ $(LIBS) $(MPILIBS) mpi_cf1.o common.o libmpi.o
 mpi_cf_Alltoallv: mpi_cf_Alltoallv.o common.o libmpi.o
 	$(MPCC) -o $@ $(LIBS) $(MPILIBS) mpi_cf_Alltoallv.o common.o libmpi.o

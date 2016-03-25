@@ -301,17 +301,7 @@ int main( int argc, char **argv )
             time_commu1 = read_timer();
         }
         // cout << "--> "<< nlocalNativeNew <<" localNatives" <<endl;
-        // cout.flush();
 
-        // //let's check that the particles are allright
-        // cout << endl << "The particles gathered have for x:"<< endl;
-        // for (int proc = 0; proc < n_proc; proc++)
-        // {
-        //     cout << "Proc " << proc <<" : ";
-        //     for (int part = 0; part < assignProc[proc].size(); part ++)
-        //         cout << particles_scatter[partition_offsets[proc] + part ].x << ", ";
-        //     cout << endl;
-        // }       
 
         //
         //  allocate storage for local partition
@@ -328,34 +318,6 @@ int main( int argc, char **argv )
         if ( (step +1)%SAVEFREQ == 0 and rank == 0)
             time_commu1 = read_timer() - time_commu1;
 
-        // 
-        //compute nlocal
-        // 
-        // //char out2[102400], *put2 = out2;
-        // ntotalReceived = nlocalsReceived[0];
-        // local_offsets[0]=nlocalNative; //poure new particles after the OldNatives in local!
-        // // put2 += sprintf(put2, "%d -> %d part offset %d, ", 0, nlocalsReceived[0], local_offsets[0]);
-        // for (int p = 1; p<n_proc; p++)
-        // {
-        //     ntotalReceived += nlocalsReceived[p];
-        //     local_offsets[p] = local_offsets[p-1] + nlocalsReceived[p-1];
-        //     // put2 += sprintf(put2, "%d -> %d part offset %d, ", p, nlocalsReceived[p], local_offsets[p]);
-        // }
-        // // printf("I am proc %d and will receive: %s = %d particles\n", rank, out2, ntotalReceived);
-        // // fflush(stdout);
-        // MPI_Alltoallv( particles_scatter, partition_sizes, partition_offsets, PARTICLE,
-        //                local, nlocalsReceived, local_offsets, PARTICLE, MPI_COMM_WORLD );
-
-        // char out2[102400], *put2 = out2;
-        // ntotalReceived = nlocalsReceived[0];
-        // put2 += sprintf(put2, "%d -> %d part, ", 0, nlocalsReceived[0]);
-        // for (int p = 1; p<n_proc; p++)
-        // {
-        //     ntotalReceived += nlocalsReceived[p];
-        //     put2 += sprintf(put2, "%d -> %d part, ", p, nlocalsReceived[p]);
-        // }
-        // printf("I am proc %d and will receive: %s = %d particles\n", rank, out2, ntotalReceived);
-        // fflush(stdout);
 
         ntotalReceived = 0;
         // non-blocking receives
@@ -409,33 +371,7 @@ int main( int argc, char **argv )
             time_computing = read_timer();
         }
 
-        // // 
-        // // print the received and bining of each processor
-        // // 
-        // char out1[102400], *put1 = out1; //fucking learn to clear arrays!!!
-        // int partsInBin;
-        // for (int b = 0; b < binNumber; b++)
-        // {
-        //     partsInBin = bins[b].particlesInBin.size();
-        //     if (partsInBin > 0)
-        //     {
-        //         put1 += sprintf(put1, "\tBin %d has %d parts: ", b, partsInBin);
-        //         for(int p =0; p< partsInBin; p++)
-        //         {
-        //             current_part = *(bins[b].particlesInBin[p]);
-        //             put1 += sprintf(put1, "%f, ", current_part.x);
-        //         }
-        //     }
-        // }
-        // printf("\nI am proc %d and I have received %d part. Now I have %d natives, all bined as:\n %s \n",rank,ntotalReceived, nlocalNativeNew, out1);
-        // fflush(stdout);
 
-        //
-        //  save current step if necessary (slightly different semantics than in other codes)
-        //
-        // if( find_option( argc, argv, "-no" ) == -1 )
-        //   if( fsave && (step%SAVEFREQ) == 0 )
-        //     save( fsave, nlocalNativeNew, local );
 
         //
         // Let's apply the forces!
@@ -505,8 +441,8 @@ int main( int argc, char **argv )
 
     if (rank == 0) 
     {  
-      // printf( "\n************\nN = %d, n = %d, simulation time = %g seconds\n**********\n",
-      //                            n_proc,    n,               simulation_time);
+      printf( "\n************\nN = %d, n = %d, simulation time = %g seconds\n**********\n",
+                                  n_proc,    n,               simulation_time);
 
       if( find_option( argc, argv, "-no" ) == -1 )
       {
@@ -526,11 +462,11 @@ int main( int argc, char **argv )
 
     // Printing summary data
        
-      // if( fsum )
-      // {
-      //    fprintf(fsum,"%d %d %g\n",n,n_proc,simulation_time);
-      //    fflush(fsum);
-      // }
+       if( fsum )
+       {
+          fprintf(fsum,"%d %d %g\n",n,n_proc,simulation_time);
+          fflush(fsum);
+       }
     }
 
     //

@@ -1,0 +1,28 @@
+n = 500, simulation time = 0.048999 seconds
+The 1 Proc form: 1 rows, 1 cols with binNumPerEdge = 50, regRowsOfBinsPerProc = 50, regColsOfBinsPerProc = 50
+The 2 Proc form: 2 rows, 1 cols with binNumPerEdge = 50, regRowsOfBinsPerProc = 25, regColsOfBinsPerProc = 50
+The 4 Proc form: 2 rows, 2 cols with binNumPerEdge = 50, regRowsOfBinsPerProc = 25, regColsOfBinsPerProc = 25
+The 6 Proc form: 3 rows, 2 cols with binNumPerEdge = 50, regRowsOfBinsPerProc = 16, regColsOfBinsPerProc = 25
+The 12 Proc form: 4 rows, 3 cols with binNumPerEdge = 50, regRowsOfBinsPerProc = 12, regColsOfBinsPerProc = 16
+The 18 Proc form: 3 rows, 6 cols with binNumPerEdge = 50, regRowsOfBinsPerProc = 16, regColsOfBinsPerProc = 8
+The 24 Proc form: 4 rows, 6 cols with binNumPerEdge = 50, regRowsOfBinsPerProc = 12, regColsOfBinsPerProc = 8
+The 2 Proc form: 2 rows, 1 cols with binNumPerEdge = 71, regRowsOfBinsPerProc = 35, regColsOfBinsPerProc = 71
+The 4 Proc form: 2 rows, 2 cols with binNumPerEdge = 100, regRowsOfBinsPerProc = 50, regColsOfBinsPerProc = 50
+The 6 Proc form: 3 rows, 2 cols with binNumPerEdge = 123, regRowsOfBinsPerProc = 41, regColsOfBinsPerProc = 61
+The 12 Proc form: 4 rows, 3 cols with binNumPerEdge = 174, regRowsOfBinsPerProc = 43, regColsOfBinsPerProc = 58
+The 18 Proc form: 3 rows, 6 cols with binNumPerEdge = 213, regRowsOfBinsPerProc = 71, regColsOfBinsPerProc = 35
+The 24 Proc form: 4 rows, 6 cols with binNumPerEdge = 245, regRowsOfBinsPerProc = 61, regColsOfBinsPerProc = 40
+
+Strong scaling estimates are :
+ (speedup)
+ (efficiency)    for
+ threads/processors
+
+Average strong scaling efficiency:    -nan 
+
+Weak scaling estimates are :
+ (efficiency)    for
+ threads/processors
+
+Average weak scaling efficiency:    -nan 
+
