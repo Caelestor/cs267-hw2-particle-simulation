@@ -1,0 +1,36 @@
+n = 5000, simulation time = 0.579573 seconds
+The 1 Proc form: 1 rows, 1 cols with binNumPerEdge = 159, regRowsOfBinsPerProc = 159, regColsOfBinsPerProc = 159
+
+************
+N = 1, n = 5000, simulation time = 0.849031 seconds
+**********
+The 2 Proc form: 2 rows, 1 cols with binNumPerEdge = 159, regRowsOfBinsPerProc = 79, regColsOfBinsPerProc = 159
+
+************
+N = 2, n = 5000, simulation time = 0.728951 seconds
+**********
+The 4 Proc form: 2 rows, 2 cols with binNumPerEdge = 159, regRowsOfBinsPerProc = 79, regColsOfBinsPerProc = 79
+
+************
+N = 4, n = 5000, simulation time = 0.469341 seconds
+**********
+The 6 Proc form: 3 rows, 2 cols with binNumPerEdge = 159, regRowsOfBinsPerProc = 53, regColsOfBinsPerProc = 79
+
+************
+N = 6, n = 5000, simulation time = 0.492486 seconds
+**********
+The 12 Proc form: 4 rows, 3 cols with binNumPerEdge = 159, regRowsOfBinsPerProc = 39, regColsOfBinsPerProc = 53
+
+************
+N = 12, n = 5000, simulation time = 0.594593 seconds
+**********
+The 18 Proc form: 3 rows, 6 cols with binNumPerEdge = 159, regRowsOfBinsPerProc = 53, regColsOfBinsPerProc = 26
+
+************
+N = 18, n = 5000, simulation time = 1.31053 seconds
+**********
+The 24 Proc form: 4 rows, 6 cols with binNumPerEdge = 159, regRowsOfBinsPerProc = 39, regColsOfBinsPerProc = 26
+
+************
+N = 24, n = 5000, simulation time = 0.515717 seconds
+**********

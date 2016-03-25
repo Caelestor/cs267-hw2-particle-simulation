@@ -1,0 +1,140 @@
+rm: cannot remove `auto-mpi_cf1_5000n.txt': No such file or directory
+rm: cannot remove `auto-mpi_cf1_5000n_*p.txt': No such file or directory
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: TMPDIR [/scratch2/scratchdirs/phoenix4] is not writeable
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: Setting TMPDIR to /tmp
+slurmstepd: Setting TMPDIR to /tmp
+Fri Mar 25 02:11:20 2016: [unset]:_pmi_alps_get_apid:alps response not OKAY
+Fri Mar 25 02:11:20 2016: [unset]:_pmi_init:_pmi_alps_init returned -1
